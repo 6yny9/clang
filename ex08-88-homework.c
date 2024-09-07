@@ -31,22 +31,29 @@
 
 */
 
-// 삼중 for문....?
 
 #include <stdio.h>
 
 int main(void)
 {
-    for(int k = 0; k < ?; k++)
-    {
-        
-    }
-    for(int i = 2; i < 10; i++)
+    for(int k = 1; k < 4; k++)
     {
         for(int j = 1; j < 10; j++)
         {
-            printf("%d X %d = %d\n", i, j, i*j);
+            for(int i = 3*k-1; i < 3*k+2; i++)
+            {
+                if(i == 10) break;
+
+                printf("%d X %d = %d", i, j, i*j);
+                printf("      ");
+                
+                if(i*j < 10) printf(" ");
+            }
+
+            printf("\n");
         }
+
+        printf("\n");
     }
 
     return 0;
