@@ -15,11 +15,11 @@
 2       8
 15      9       3
 4       10      16      22
-29      23      17      115
-6       12      18      2430      36
-43      37      31      2519      13      7
-14      20      26      3238      44
-45      39      33      2721
+29      23      17      11      5
+6       12      18      24      30      36
+43      37      31      25      19      13      7
+14      20      26      32      38      44
+45      39      33      27      21
 28      34      40      46
 47      41      35
 42      48
@@ -45,13 +45,27 @@ int main(void)
 
     for(int i = 0; i < 13; i++)
     {
-        for(int j = 0; j > 7; j++)
+        for(int j = 0; j < 7; j++)
         {
-            if(i/2 = 0)
+            if(i-j < 0) continue;
+            else if(i-j > 6) continue;
+            else
             {
-                printf("%d      ", arr[j][i-j]);
+                if(i%2 == 0)
+                {
+                    printf("%d      ", arr[i-j][j]);
+                    if(arr[i-j][j] < 10)
+                        printf(" ");
+                }
+                else
+                {
+                    printf("%d      ", arr[j][i-j]);
+                    if(arr[j][i-j] < 10)
+                        printf(" ");
+                }
             }
         }
+        printf("\n");
     }
 
     return 0;
